@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using astronnCRM.Api.Data;
 
 namespace astronnCRM.Api
 {
@@ -34,7 +32,7 @@ namespace astronnCRM.Api
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(name:"areas", pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+            app.MapControllerRoute(name: "areas", pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }
