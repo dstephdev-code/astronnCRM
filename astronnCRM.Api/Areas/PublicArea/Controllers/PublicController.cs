@@ -9,6 +9,7 @@ namespace astronnCRM.Api.Areas.PublicArea.Controllers
     [ApiController]
     public class PublicController : ControllerBase
     {
+        [HttpGet]
         public IActionResult Get()
         {
             return Ok("Ohayou from Public Area!");
