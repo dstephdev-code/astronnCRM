@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\astronnCRM.Model\astronnCRM.Model.csproj" />
+  </ItemGroup>
+
 </Project>
