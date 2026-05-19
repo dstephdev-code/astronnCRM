@@ -1,3 +1,4 @@
+using astronnCRM.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 namespace astronnCRM.Api
@@ -10,8 +11,6 @@ namespace astronnCRM.Api
             var connectionString = builder.Configuration.GetConnectionString("ApplicationDBContext") ?? throw new InvalidOperationException("Connection string 'ApplicationDBContext' not found.");
 
             builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(connectionString));
-
-            builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDBContext>();
 
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen(options =>
