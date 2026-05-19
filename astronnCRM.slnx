@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="astronnCRM.Api/astronnCRM.Api.csproj" />
+  <Project Path="astronnCRM.DataAccess/astronnCRM.DataAccess.csproj" />
+  <Project Path="astronnCRM.Model/astronnCRM.Model.csproj" />
+  <Project Path="astronnCRM.Service/astronnCRM.Service.csproj" />
+  <Project Path="astronnCRM.Utility/astronnCRM.Utility.csproj" />
+  <Project Path="astronnCRM.WebBlazor/astronnCRM.WebBlazor.csproj" />
+</Solution>
