@@ -1,5 +1,6 @@
 using astronnCRM.DataAccess;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace astronnCRM.Api
 {
@@ -25,6 +26,13 @@ namespace astronnCRM.Api
             {
                 app.UseSwagger();
                 app.UseSwaggerUI(options => { options.SwaggerEndpoint("/swagger/v1/swagger.json", "astronnCRM API v1"); });
+
+                var url = "https://localhost:7110/swagger";
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
             }
 
             app.UseHttpsRedirection();
