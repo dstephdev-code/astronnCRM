@@ -18,4 +18,8 @@
     <ProjectReference Include="..\astronnCRM.Service\astronnCRM.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Identity\" />
+  </ItemGroup>
+
 </Project>
