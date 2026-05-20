@@ -2,7 +2,7 @@ using astronnCRM.Model.Enums;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace astronnCRM.Model.Identity;
+namespace astronnCRM.Model.IdentityModels;
 
 public class ApplicationUser : IdentityUser
 {

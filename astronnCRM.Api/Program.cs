@@ -1,4 +1,8 @@
 using astronnCRM.DataAccess;
+using astronnCRM.Model.IdentityModels;
+using astronnCRM.Service;
+using astronnCRM.Service.IService;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
@@ -19,6 +23,15 @@ namespace astronnCRM.Api
                 options.SwaggerDoc("v1", new Microsoft.OpenApi.OpenApiInfo { Title = "astronnCRM.API", Version = "v1" });
             });
             builder.Services.AddOpenApi();
+
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(option =>
+            {
+                option.SignIn.RequireConfirmedEmail = true;
+            })
+                .AddEntityFrameworkStores<ApplicationDBContext>()
+                .AddDefaultTokenProviders();
+
+            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             var app = builder.Build();
 

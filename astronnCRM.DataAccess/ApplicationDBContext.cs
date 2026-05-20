@@ -1,4 +1,4 @@
-using astronnCRM.Model.Identity;
+using astronnCRM.Model.IdentityModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
