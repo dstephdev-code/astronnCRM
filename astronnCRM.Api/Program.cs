@@ -24,7 +24,10 @@ namespace astronnCRM.Api
             });
             builder.Services.AddOpenApi();
 
-            builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(option =>
+            {
+                option.SignIn.RequireConfirmedEmail = true;
+            })
                 .AddEntityFrameworkStores<ApplicationDBContext>()
                 .AddDefaultTokenProviders();
 
