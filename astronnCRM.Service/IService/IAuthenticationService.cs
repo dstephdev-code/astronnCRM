@@ -1,10 +1,11 @@
-﻿using astronnCRM.Model.InputModels;
+﻿using astronnCRM.Model.ApplicationModels;
+using astronnCRM.Model.InputModels;
 
 namespace astronnCRM.Service.IService
 {
     public interface IAuthenticationService
     {
-        Task<bool> LoginAsync(ApplicationUserLoginInputModel model);
+        Task<ResponseModel<bool>> LoginAsync(ApplicationUserLoginInputModel model);
         Task<bool> RegisterAsync(ApplicationUserRegisterInputModel model);
         Task<bool> ForgotPasswordAsync(ApplicationUserRegisterInputModel model);
         Task<bool> ResetPasswordAsync(ApplicationUserRegisterInputModel model);
