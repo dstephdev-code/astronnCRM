@@ -1,20 +1,9 @@
-﻿using astronnCRM.Model.Enums;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace astronnCRM.Model.InputModels
 {
-    public class ApplicationUserInputModel
+    public class ApplicationUserLoginInputModel
     {
-        [Required]
-        public required string FirstName { get; set; }
-
-        [Required]
-        public required string LastName { get; set; }
-
-        public Gender? Gender { get; set; }
-        public DateTime? DateOfBirth { get; set; }
-        public string? ImageName { get; set; }
-
         [Required]
         [EmailAddress]
         public required string Email { get; set; }

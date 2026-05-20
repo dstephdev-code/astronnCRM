@@ -5,14 +5,15 @@ using Microsoft.AspNetCore.Identity;
 
 namespace astronnCRM.Service
 {
-    public class AuthenticationService(UserManager<ApplicationUser> userManager) : IAuthenticationService
+    public class AuthenticationService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager) : IAuthenticationService
     {
-        public async Task<bool> LoginAsync(ApplicationUserInputModel model)
+        public async Task<bool> LoginAsync(ApplicationUserLoginInputModel model)
         {
-            throw new NotImplementedException();
+            var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
+            return result.Succeeded ? true : throw new Exception("Unable to login user; Errors: " + result.ToString());
         }
 
-        public async Task<bool> RegisterAsync(ApplicationUserInputModel model)
+        public async Task<bool> RegisterAsync(ApplicationUserRegisterInputModel model)
         {
             ArgumentNullException.ThrowIfNull(model.Email);
             ArgumentNullException.ThrowIfNull(model.Password);
@@ -33,22 +34,22 @@ namespace astronnCRM.Service
             return result.Succeeded ? true : throw new Exception("Unable to create user; Errors: " + result.Errors);
         }
 
-        public async Task<bool> ForgotPasswordAsync(ApplicationUserInputModel model)
+        public async Task<bool> ForgotPasswordAsync(ApplicationUserRegisterInputModel model)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<bool> ResetPasswordAsync(ApplicationUserInputModel model)
+        public async Task<bool> ResetPasswordAsync(ApplicationUserRegisterInputModel model)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<bool> ChangePasswordAsync(ApplicationUserInputModel model)
+        public async Task<bool> ChangePasswordAsync(ApplicationUserRegisterInputModel model)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<bool> RefreshTokenAsync(ApplicationUserInputModel model)
+        public async Task<bool> RefreshTokenAsync(ApplicationUserRegisterInputModel model)
         {
             throw new NotImplementedException();
         }
